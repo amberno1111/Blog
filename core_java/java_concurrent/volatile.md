@@ -1,6 +1,5 @@
 # volatile
 
-## Abstract
 
 在Java并发编程中，`synchronized`和`volatile`关键字都扮演者很重要的角色，`volatile`是轻量级的`synchronized`，它能够保证在并发环境下**共享变量的可见性**，即当一个线程在修改一个变量时，其他线程也能读到这个修改的值。
 
