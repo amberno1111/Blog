@@ -21,13 +21,26 @@ JIT多增加的这一行汇编代码会做两件事情：
 
 ## `volatile`的使用优化
 
+**TODO:我其实只在JDK7里看到这样的代码，在JKD8里并没有`Padded Atomic Reference`这个内部类，应该是改过了。之后需要研究下JDK8的代码然后补上这部分。**
+
+
 Java中有个由链表组成的无界阻塞队列`LinkedTransferQueue`，它使用了一种**追加字节的方式来优化队列出队和入队的性能**，这其实就是利用了处理器缓存的一个例子。
 
 代码是这样的：
 ```java
+private transient final PaddedAtomicReference<QNode> head;
+private transient final PaddedAtomicReference<QNode> tail;
 
+static final class PaddedAtomicReference<T> extends AtomicReference <T> {
+    // 这里多声明了15个变量，每个变量引用占4字节，总共60字节
+    Object p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, pa, pb, pc, pd, pe;
+    PaddedAtomicReference(T r) {
+        super(r)
+    }
+}
 
 ```
+
 它使用了一个内部类来定义头节点head和尾节点tail，然后这个内部类只干了一件事，就是把共享变量追加到64字节。一个对象的引用占4个字节，它一共追加了15个变量，再加上父类value的引用，总共占用了64个字节。
 
 ### 为什么追加字节可以提升出队入队的效率
