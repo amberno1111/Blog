@@ -9,6 +9,7 @@
     * [CAS算法](/core_java/java_concurrent/Compare_and_Swap.md)
     * [synchronized](/core_java/java_concurrent/synchronized.md)
     * [原子操作的实现原理](/core_java/java_concurrent/Atomic_operation.md)
+    * [Java Memory Model](/core_java/java_concurrent/Java_Memory_Model.md)
 * [Operating System](/operating_system/README.md)
   * [I/O模型](/operating_system/IO_models.md)
 * [Thinking](/thinking/README.md)
