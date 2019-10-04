@@ -15,6 +15,7 @@
     * [Java中的锁](/core_java/java_concurrent/Lock_in_Java.md)
   * [Java Virtual Machine](/core_java/jvm/README.md)
     * [Java虚拟机内存区域](/core_java/jvm/The_Memory_Structure_of_The_Java_Virtual_Machine.md)
+    * [HotSpot中的Java对象](/core_java/jvm/Java_Object_in_HotSpot.md)
 * [Operating System](/operating_system/README.md)
   * [I/O模型](/operating_system/IO_models.md)
 * [Thinking](/thinking/README.md)
