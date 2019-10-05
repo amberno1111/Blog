@@ -18,4 +18,6 @@
     * [HotSpot中的Java对象](/core_java/jvm/Java_Object_in_HotSpot.md)
 * [Operating System](/operating_system/README.md)
   * [I/O模型](/operating_system/IO_models.md)
+* [Algorithm](/algorithm/README.md)
+  * [K Sum问题](/algorithm/K_Sum_Problem.md)
 * [Thinking](/thinking/README.md)
