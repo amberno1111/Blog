@@ -16,6 +16,7 @@
   * [Java Virtual Machine](/core_java/jvm/README.md)
     * [Java虚拟机内存区域](/core_java/jvm/The_Memory_Structure_of_The_Java_Virtual_Machine.md)
     * [HotSpot中的Java对象](/core_java/jvm/Java_Object_in_HotSpot.md)
+    * [Java虚拟机中的对象与与引用](/core_java/jvm/Object_and_Reference.md)
 * [Operating System](/operating_system/README.md)
   * [I/O模型](/operating_system/IO_models.md)
 * [Algorithm](/algorithm/README.md)
