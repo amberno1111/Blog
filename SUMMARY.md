@@ -22,4 +22,3 @@
   * [I/O模型](/operating_system/IO_models.md)
 * [Algorithm](/algorithm/README.md)
   * [K Sum问题](/algorithm/K_Sum_Problem.md)
-* [Thinking](/thinking/README.md)
