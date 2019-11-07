@@ -1,19 +1,14 @@
-# K-Sum问题
+# K Sum问题
 
 在 LeetCode 上有 [Two Sum](https://leetcode.com/problems/two-sum/)，[Three Sum](https://leetcode.com/problems/3sum/)，[Three Sum Closest](https://leetcode.com/problems/3sum-closest/) 等等问题，这些问题实际上有比较通用的解法，所以这篇文章记录了一下对于这种K-Sum问题的解题思路。
 
 ## Two-Sum
 
-> Given an array of integers, return indices of the two numbers such that they add up to a specific target.
-You may assume that each input would have exactly one solution, and you may not use the same element twice.
-Example:
-Given nums = [2, 7, 11, 15], target = 9
-Because nums[0] + nums[1] = 2 + 7 = 9
-return [0, 1]
+> Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you may not use the same element twice. Example: Given nums = \[2, 7, 11, 15\], target = 9 Because nums\[0\] + nums\[1\] = 2 + 7 = 9 return \[0, 1\]
 
 ### 暴力解法
 
-对于这种题，第一反应是暴力解法，直接两个 for 循环遍历，时间复杂度 O(N*N)，这种解法基本上是效率最低的:
+对于这种题，第一反应是暴力解法，直接两个 for 循环遍历，时间复杂度 O\(N\*N\)，这种解法基本上是效率最低的:
 
 ```python
 class Solution(object):
@@ -35,7 +30,7 @@ class Solution(object):
 
 ### 以空间换时间
 
-可以看到，暴力解法的第二层循环实际上已经遍历过所有的元素了，如果，我们能把遍历到的元素保存下来，然后以 O(1) 的时间来做查找，那效率就会大大的提高，时间复杂度可以提升到 O(N) 。
+可以看到，暴力解法的第二层循环实际上已经遍历过所有的元素了，如果，我们能把遍历到的元素保存下来，然后以 O\(1\) 的时间来做查找，那效率就会大大的提高，时间复杂度可以提升到 O\(N\) 。
 
 ```python
 class Solution(object):
@@ -61,18 +56,11 @@ class Solution(object):
 
 ### 如果数组有序的
 
-Two Sum 问题有一个变种，如果数组已经按照从小大排序，能否实现 O(N) 的时间和 O(1) 空间复杂度的解法？原题如下：
-> Given an array of integers that is already sorted in ascending order, find two numbers such that they add up to a specific target number.
-The function twoSum should return indices of the two numbers such that they add up to the target, where index1 must be less than index2.
-Node: 
-> 1. You returned answers (both index1 and index2) are not zero-based
-> 2. You may assume the each input would exactly one solution and you may not use the same element twice.
->
-> Example:
-Input: numbers = [2, 7, 11, 15], target = 9
-Output: [1, 2]
-Explanation: The sum of 2 and 7 is 9, Therefore index1 = 1, index2 = 2
+Two Sum 问题有一个变种，如果数组已经按照从小大排序，能否实现 O\(N\) 的时间和 O\(1\) 空间复杂度的解法？原题如下：
 
+> Given an array of integers that is already sorted in ascending order, find two numbers such that they add up to a specific target number. The function twoSum should return indices of the two numbers such that they add up to the target, where index1 must be less than index2. Node: 1. You returned answers \(both index1 and index2\) are not zero-based 2. You may assume the each input would exactly one solution and you may not use the same element twice.
+>
+> Example: Input: numbers = \[2, 7, 11, 15\], target = 9 Output: \[1, 2\] Explanation: The sum of 2 and 7 is 9, Therefore index1 = 1, index2 = 2
 
 ```python
 class Solution(object):
@@ -106,19 +94,13 @@ class Solution(object):
 
 再来看 Three Sum 问题：
 
-> Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0?
-Find all unique triplets in the array which gives the sume of zero.
-Note: The solution set must not contain duplicate triplets.
-Example:
-Given array nums = [-1, 0, 1, 2, -1, -4],
-A solution set is:
-[ [-1, 0, 1], [-1, -1, 2] ]
+> Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0? Find all unique triplets in the array which gives the sume of zero. Note: The solution set must not contain duplicate triplets. Example: Given array nums = \[-1, 0, 1, 2, -1, -4\], A solution set is: \[ \[-1, 0, 1\], \[-1, -1, 2\] \]
 
 这题的难度稍微大一点，出现了三个变量，并且还需要去重。暴力解法这里就不继续写了，因为没啥技术含量。
 
 ### 借用 Two Sum 的思路
 
-稍微好点的解法是，双重 `for` 循环，然后第二重循环调用 two-sum 的解法，就相当于把题目变成了 `a + b = -c` ，然后 `a, b, c` 都是来自于这个数组，这种解法的时间复杂度是 O(N * N) ，空间复杂度是 O(1) 。
+稍微好点的解法是，双重 `for` 循环，然后第二重循环调用 two-sum 的解法，就相当于把题目变成了 `a + b = -c` ，然后 `a, b, c` 都是来自于这个数组，这种解法的时间复杂度是 O\(N \* N\) ，空间复杂度是 O\(1\) 。
 
 ```python
 class Solution(object):
@@ -164,12 +146,7 @@ class Solution(object):
 
 Three Sum 的变种 [Three Sum Cloest](https://leetcode.com/problems/3sum-closest/) ，实际上并没有太多的变化。
 
-> Given an array nums of n integers and an integer target,
- find three integers in nums such that the sum is closest to target.
- You may assume that each input would have exactly one solution.
- Example:
- Given array nums = [-1, 2, 1, -4], target = 1
- The sum that is closest to the target is 2 (-1 + 2 + 1).
+> Given an array nums of n integers and an integer target, find three integers in nums such that the sum is closest to target. You may assume that each input would have exactly one solution. Example: Given array nums = \[-1, 2, 1, -4\], target = 1 The sum that is closest to the target is 2 \(-1 + 2 + 1\).
 
 ```python
 class Solution(object):
@@ -200,22 +177,13 @@ class Solution(object):
         return result
 ```
 
-
 ## Four Sum
 
 先来看一下题目，这其实上和 Three Sum 没有太大区别：
 
-> Given an array nums of integers and an integer target,
- are there elements a, b, c, d in nums such that a + b + c + d = target?
- Find all unique quadruplets in the array which gives the sum of target.
- Note: The Solution set must not contain duplicate quadruplets.
- Example:
- Given array nums = [1, 0, -1, 0, -2, 2], target = 0
- A solution is:
- [ [-1,  0, 0, 1], [-2, -1, 1, 2], [-2,  0, 0, 2] ]
+> Given an array nums of integers and an integer target, are there elements a, b, c, d in nums such that a + b + c + d = target? Find all unique quadruplets in the array which gives the sum of target. Note: The Solution set must not contain duplicate quadruplets. Example: Given array nums = \[1, 0, -1, 0, -2, 2\], target = 0 A solution is: \[ \[-1, 0, 0, 1\], \[-2, -1, 1, 2\], \[-2, 0, 0, 2\] \]
 
- 
-解题思路也差不多，就是降级到 Three Sum，再降级到 Two Sum 然后用双指针解决，时间复杂度 O(N\*N\*N)，这个解题思路适用于所有的 K-Sum 问题。
+解题思路也差不多，就是降级到 Three Sum，再降级到 Two Sum 然后用双指针解决，时间复杂度 O\(N\*N\*N\)，这个解题思路适用于所有的 K-Sum 问题。
 
 先来看一个不那么通用的解法：
 
@@ -267,12 +235,9 @@ class Solution(object):
         return result
 ```
 
-
 ## K Sum
 
 我们可以继续把问题扩展到 K Sum，然后使用递归来解决问题。使用递归的话有一个固定的套路，先找公共抽象。
-
-
 
 ```python
 class Solution(object):
@@ -318,5 +283,5 @@ class Solution(object):
                     for item in temp_res:
                         result.append([nums[i]] + item)
             return result
-
 ```
+
