@@ -29,5 +29,4 @@
 * [Algorithm](algorithm/README.md)
   * [K Sum问题](algorithm/k_sum_problem.md)
   * [使用位运算解决算法题](algorithm/how_to_use_bit_manipulation.md)
-* [Untitled](untitled.md)
 
