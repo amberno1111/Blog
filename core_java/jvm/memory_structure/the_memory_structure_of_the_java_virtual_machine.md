@@ -48,4 +48,7 @@ Java堆是Java内存管理的核心区域，它是在虚拟机启动的时候创
 ## 直接内存
 
 直接内存并不是虚拟机运行时数据区域的一部分，也不是Java虚拟机规范中定义的内存区域。但是Java会使用到这部分内存，在NIO中引入了一种基于Channel和缓冲区的I/O方式，它使用Native函数直接分配堆外内存，然后通过一个存储在Java堆内的DirectByteBuffer对象作为这块内存的引用进行操作，这样可以在一些场景中显著的提高性能，因为避免了在Java堆和Native堆中来回copy数据。
+回收设计是这样的：构建DirectByteBuffer的时候会同时构建一个Cleaner对象，当GC发现DirectByteBuffer对象变成垃圾时，会调用Cleaner#clean回收对应的堆外内存，一定程度上防止了内存泄露。当然，也可以手动的调用该方法，对堆外内存进行提前回收。
+
+
 
