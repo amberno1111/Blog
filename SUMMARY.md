@@ -22,6 +22,8 @@
       * [HotSpot中的垃圾收集器](core_java/jvm/garbage_collection/garbage_collectors_in_hotspot.md)
       * [内存分配与垃圾回收](core_java/jvm/garbage_collection/memory_allocation_and_garbage_collection.md)
       * [CMS垃圾收集器](core_java/jvm/garbage_collection/concurrent_mark_sweep_collector.md)
+    * [类加载机制]
+      * [虚拟机类加载机制](core_java/jvm/class_loader/class_loader.md)
 * [Operating System](operating_system/README.md)
   * [I/O模型](operating_system/io_models.md)
 * [Algorithm](algorithm/README.md)
