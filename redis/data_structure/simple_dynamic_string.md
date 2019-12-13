@@ -7,7 +7,7 @@ Redis是使用C语言实现的，所以它底层的数据结构也是用C语言�
 ## SDS的定义
 
 ```c
-struct {
+struct sdshdr {
     // 记录 buf 数组中已使用的字节的数量
     int len;
     // 记录 buf 数组中未使用的字节的数量

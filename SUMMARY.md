@@ -36,4 +36,6 @@
     * [Set](redis/data_structure/set.md)
     * [Hash](redis/data_structure/hash.md)
     * [Sorted Set](redis/data_structure/sorted_set.md)
+  * [Redis为什么这么快](redis/why_is_redis_so_fast.md)
+  * [一些常用的Redis命令](redis/redis_commands.md)
 
