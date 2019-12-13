@@ -26,7 +26,7 @@
     * [类加载机制](core_java/jvm/class_loader/README.md))
 * [Operating System](operating_system/README.md)
   * [I/O模型](operating_system/io_models.md)
-* [Algorithm](algorithm/README.md)
+* Algorithm
   * [K Sum问题](algorithm/k_sum_problem.md)
   * [使用位运算解决算法题](algorithm/how_to_use_bit_manipulation.md)
 * [Redis](redis/introduction.md)
