@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Initial page](README.md)
+* [Caicai's Blog](README.md)
 * [Core Java]()
   * [Java Concurrent]()
     * [并发编程的挑战](core_java/java_concurrent/concurrent_programming_challenges.md)
@@ -30,7 +30,7 @@
   * [K Sum问题](algorithm/k_sum_problem.md)
   * [使用位运算解决算法题](algorithm/how_to_use_bit_manipulation.md)
 * [Redis](redis/README.md)
-  * [Redis数据结构]
+  * [Data Structure in Redis]()
     * [Simple Dynamic String](redis/data_structure/simple_dynamic_string.md)
     * [List](redis/data_structure/list.md)
     * [Set](redis/data_structure/set.md)
