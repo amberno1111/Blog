@@ -29,4 +29,11 @@
 * [Algorithm](algorithm/README.md)
   * [K Sum问题](algorithm/k_sum_problem.md)
   * [使用位运算解决算法题](algorithm/how_to_use_bit_manipulation.md)
+* [Redis](redis/introduction.md)
+  * [Redis数据结构]
+    * [Simple Dynamic String](redis/data_structure/simple_dynamic_string.md)
+    * [List](redis/data_structure/list.md)
+    * [Set](redis/data_structure/set.md)
+    * [Hash](redis/data_structure/hash.md)
+    * [Sorted Set](redis/data_structure/sorted_set.md)
 
