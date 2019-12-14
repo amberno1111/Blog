@@ -38,4 +38,6 @@
     * [Sorted Set](redis/data_structure/sorted_set.md)
   * [Redis为什么这么快](redis/why_is_redis_so_fast.md)
   * [一些常用的Redis命令](redis/redis_commands.md)
+  * [Redis应用之缓存]()
+    * [缓存的选型: Redis vs Memcached](redis/cache/redis_vs_memcached.md)
 

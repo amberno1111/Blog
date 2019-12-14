@@ -13,7 +13,7 @@ typedef struct listNode {
     // 具体数值，这里是一个void的指针，也就是可以放任何内容
     // 这东西相当于一个泛型啊
     void *value;
-}
+} listNode;
 
 typedef struct list {
     // 头节点
@@ -28,7 +28,7 @@ typedef struct list {
     void (*free)(void *ptr);
     // 节点值对比函数
     int (*match)(void *ptr, void *key);
-}
+} list;
 
 ```
 
