@@ -2,6 +2,8 @@
 
 * [Caicai's Blog](README.md)
 * [Core Java]()
+  * [JDK]()
+    * [HashMap](core_java/jdk/hashmap.md)
   * [Java Concurrent]()
     * [并发编程的挑战](core_java/java_concurrent/concurrent_programming_challenges.md)
     * [CPU缓存一致性协议MESI](core_java/java_concurrent/mesi.md)
