@@ -2,7 +2,7 @@
 
 Redis里的Sorted Set是个复合结构，由一个hash和一个skiplist组成，其中hash用来保存value和score的对应关系，skiplist用于给score排序。
 
-## skiplist
+## Skiplist
 
 因为Redis的应用场景，SortedSet会有很多插入、删除、更新的操作，为了保证这些操作的高效，只能使用链表来实现，链表可以保证插入、删除、更新操作的时间复杂度都在O(1)。
 

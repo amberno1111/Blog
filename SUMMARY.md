@@ -42,4 +42,6 @@
   * [一些常用的Redis命令](redis/redis_commands.md)
   * [Redis应用之缓存]()
     * [缓存的选型: Redis vs Memcached](redis/cache/redis_vs_memcached.md)
+    * [缓存的一些经典问题](redis/cache/some_classic_problems_in_cache.md)
+    * [Bloom Filter](redis/cache/bloom_filter.md)
 
