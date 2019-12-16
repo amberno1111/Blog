@@ -32,7 +32,7 @@
   * [K Sum问题](algorithm/k_sum_problem.md)
   * [使用位运算解决算法题](algorithm/how_to_use_bit_manipulation.md)
 * [Redis](redis/README.md)
-  * [Data Structure in Redis]()
+  * [Data Structure in Redis](redis/data_structure/README.md)
     * [Simple Dynamic String](redis/data_structure/simple_dynamic_string.md)
     * [List](redis/data_structure/list.md)
     * [Set](redis/data_structure/set.md)
