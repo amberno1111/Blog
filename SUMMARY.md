@@ -15,6 +15,8 @@
     * [双重检查锁定与延迟初始化](core_java/java_concurrent/double_checked_locking.md)
     * [Java中的线程](core_java/java_concurrent/java_thread.md)
     * [Java中的锁](core_java/java_concurrent/lock_in_java.md)
+    * [Semaphore](core_java/java_concurrent/semaphore.md)
+    * [ReentrantLock](core_java/java_concurrent/reentrant_lock.md)
   * [Java Virtual Machine](core_java/jvm/README.md)
     * [内存结构]()
       * [Java虚拟机内存区域](core_java/jvm/memory_structure/the_memory_structure_of_the_java_virtual_machine.md)
