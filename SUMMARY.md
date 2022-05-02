@@ -33,6 +33,7 @@
 * [Algorithm]()
   * [K Sum问题](algorithm/k_sum_problem.md)
   * [使用位运算解决算法题](algorithm/how_to_use_bit_manipulation.md)
+  * [[LeetCode]一文搞定所有的链表题](algorithm/leetcode_linkedlist.md)
 * [Redis](redis/README.md)
   * [Data Structure in Redis](redis/data_structure/README.md)
     * [Simple Dynamic String](redis/data_structure/simple_dynamic_string.md)
