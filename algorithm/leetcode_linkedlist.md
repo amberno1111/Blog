@@ -543,18 +543,6 @@ def deleteMiddle(self, head: Optional[ListNode]) -> Optional[ListNode]:
     return dummy.next
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
 ### 2.2 双指针与反转链表技巧相结合
 - [面试题 02.06. 回文链表](https://leetcode-cn.com/problems/palindrome-linked-list-lcci/)
 - [剑指 Offer II 027. 回文链表](https://leetcode-cn.com/problems/aMhZSa/)
@@ -1210,6 +1198,80 @@ def splitListToParts(self, head: ListNode, k: int) -> List[ListNode]:
     return length
 ```
 
+- [2058. 找出临界点之间的最小和最大距离](https://leetcode-cn.com/problems/find-the-minimum-and-maximum-number-of-nodes-between-critical-points/)
+```python
+def nodesBetweenCriticalPoints(self, head: Optional[ListNode]) -> List[int]:
+    # 思路比较简单，最小距离就是两个相邻的极值点之间的距离，最大距离就是第一个和最后一个极值点的距离
+    # 0. 用 first 和 last 保存第一个和最后一个极值点的位置
+    # 1. 先从左往右遍历，cur,cur.next, cur.next.next 三个点之间判断cur.next是不是极值点
+    # 2. 如果不是极值点，更新cur指针，直接往后遍历即可
+    # 3. 如果是极值点：
+    #   3.1 当first没有被初始化时，需要初始化first
+    #   3.2 last没有被初始化时，初始化last
+    #   3.3 当last已经被初始化时，说明可以开始更新minDist和maxDist的值了，最后也要更新last的值
+    minDist = maxDist = -1
+    first = last = -1
+    cur, pos = head, 0
+
+     while cur and cur.next and cur.next.next:
+        a, b, c = cur.val, cur.next.val, cur.next.next.val
+        if b > max(a, c) or b < min(a, c):
+            if last != -1:
+                maxDist = max(pos - first, maxDist)
+                minDist = (pos - last if minDist == -1 else min(minDist, pos - last))
+            if first == -1:
+                first = pos
+            # last的值在每次发现新的极值时都需要更新
+            last = pos
+        cur, pos = cur.next, pos + 1
+
+     return [minDist, maxDist]
+```
+
+- [剑指 Offer II 029. 排序的循环链表](https://leetcode-cn.com/problems/4ueAj6/)
+```python
+# 这题其实跟链表关系不大，只要遍历一遍找到能插入的点就行
+# 思路比较简单，分为三种情况：
+# 1. 如果 head 是 None，那就创建一个节点，让这个节点的next指针指向自己即可
+# 2. 开始循环，寻找边界，边界会出现p.next.val < p.val的情况，这时候p.next就是最小值节点，p就是最大值节点
+#   2.1 如果要插入的值是大于最大值，小于最小值，就是要在边界点插入 
+#   2.2 如果要插入的值是大于等于p.val小于等于p.next.val，就说明找到了插入的点
+def insert(self, head: 'Node', insertVal: int) -> 'Node':
+    if not head:
+        tmp = Node(insertVal)
+        tmp.next = tmp
+        return tmp
+    
+    p = head
+    while p.next != head:
+        if p.val > p.next.val:
+            # 说明到达了边界点，p.next就是这个链表的起点
+            if p.val < insertVal or p.next.val > insertVal:
+                break
+        if p.val <= insertVal and insertVal <= p.next.val:
+            break
+        p = p.next
+    p.next = Node(insertVal, p.next)
+    return head
+```
+
+- [817. 链表组件](https://leetcode-cn.com/problems/linked-list-components/)
+```python
+def numComponents(self, head: Optional[ListNode], nums: List[int]) -> int:
+    # 用一个set保存nums的值，然后遍历的时候检查下即可，需要注意ans加一的条件：
+    # 1. 当前节点的值在numSet里，而下一个节点的值不在numSet里
+    # 2. 当前节点的值在numSet里，而下一个节点为None
+    numSet, cur, ans = set(nums), head, 0
+    while cur:
+        if cur.val in numSet:
+            if cur.next:
+                if cur.next.val not in numSet:
+                    ans += 1
+            else:
+                ans += 1
+        cur = cur.next
+    return ans
+```
 ### 3.2 通用刷题技巧：前缀和
 
 - [1171. 从链表中删去总和值为零的连续节点
@@ -1279,4 +1341,44 @@ def randomLevel():
         level += 1
     return level
 
+```
+
+
+### 3.4 通用刷题技巧：单调栈
+
+[单调栈](https://www.cnblogs.com/mk-oi/p/13541195.html) 是一种比较通用的刷题技巧，它是有模版的：
+```python
+def template(self, nums: List[int]) -> List[int]:
+    stack, res = [], [0] * len(nums)
+    # 反向遍历数组
+    for i in range(len(nums)-1, -1, -1):
+        # 这一步是把所有的比当前元素小的数都弹出栈
+        while len(stack) > 0 and stack[-1] <= nums[i]:
+            stack.pop()
+        # 更新结果，要么是栈顶元素，要么找不到就赋值0
+        res[i] = stack[-1] if len(stack) > 0 else 0
+        # 把当前的元素入栈
+        stack.append(nums[i])
+    return res
+```
+
+- [1019. 链表中的下一个更大节点](https://leetcode-cn.com/problems/next-greater-node-in-linked-list/)
+```python
+# 这个题比较简单的解法是，直接转成数组，然后套用单调栈模版
+def nextLargerNodes(self, head: Optional[ListNode]) -> List[int]:
+    # 先转成数组
+    array = []
+    while head:
+        array.append(head.val)
+        head = head.next
+    # 套用单调栈模版
+    length = len(array)
+    stack, ans = [], [0] * length
+    # 从后往前逆序遍历
+    for i in range(length - 1, -1, -1):
+        while len(stack) > 0 and stack[-1] <= array[i]:
+            stack.pop()
+        ans[i] = stack[-1] if len(stack) > 0 else 0
+        stack.append(array[i])
+    return ans
 ```
