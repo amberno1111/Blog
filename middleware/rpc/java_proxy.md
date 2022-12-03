@@ -494,7 +494,7 @@ public class FastClassApplication {
     public static void main(String[] args) {
         InventoryRepository inventoryRepository = new InventoryRepository();
         InventoryFastClass inventoryFastClass = new InventoryFastClass();
-        // 本质上就是对原始类的所有方法，都做了一个索引，以此来绕过反射，而是直接找到对应的方法执行
+        // 本质上就是对原始类的所有方法，都做了一个索引，以此来绕过反射，直接找到对应的方法执行
         int index = inventoryFastClass.getIndex("getInventoryById");
         inventoryFastClass.invoke(index, inventoryRepository, new Object[]{"caicai"});
     }
@@ -502,9 +502,6 @@ public class FastClassApplication {
 }
 
 ```
-
-
-
 
 
 

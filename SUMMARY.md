@@ -28,8 +28,6 @@
       * [CMS垃圾收集器](core_java/jvm/garbage_collection/concurrent_mark_sweep_collector.md)
       * [G1垃圾收集器](core_java/jvm/garbage_collection/garbage_first_collector.md)
     * [类加载机制](core_java/jvm/class_loader/README.md))
-* [Operating System]()
-  * [I/O模型](operating_system/io_models.md)
 * [Algorithm]()
   * [K Sum问题](algorithm/k_sum_problem.md)
   * [使用位运算解决算法题](algorithm/how_to_use_bit_manipulation.md)
@@ -52,3 +50,5 @@
     * [RateLimiter](middleware/redis/rate_limiter.md)
 * [RPC](middleware/rpc/README.md)
   * [[RPC预备知识]Java中的代理](middleware/rpc/java_proxy.md)
+* Spring
+	* [SpringBoot那些注入不了的占位符@Value(${xx})](spring/SpringBoot那些注入不了的占位符@Value(${xx}).md)
